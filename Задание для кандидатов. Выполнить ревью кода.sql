@@ -4,6 +4,7 @@ create procedure syn.usp_ImportFileCustomerSeasonal
 AS
 set nocount on
 begin
+	-- 2. Следует использовать один раз "declare"	
 	declare @RowCount int = (select count(*) from syn.SA_CustomerSeasonal)
 	declare @ErrorMessage varchar(max)
 
