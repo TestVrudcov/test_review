@@ -13,6 +13,7 @@ begin
 	if not exists (
 	-- 4. Нижний блок кода "Select" также должен быть с отступом от уровня кода "if" 
 	select 1
+	-- 5. Алиас "f" не соответствует стандарту наименования алиаса, должно быть "imf"
 	from syn.ImportFile as f
 	where f.ID = @ID_Record
 		and f.FlagLoaded = cast(1 as bit)
