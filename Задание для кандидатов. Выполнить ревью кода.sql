@@ -49,6 +49,7 @@ begin
 		and try_cast(cs.DateEnd as date) is not null
 		and try_cast(isnull(cs.FlagActive, 0) as bit) is not null
 
+	-- 10. Для комментариев в несколько строк используется конструкция  /* */ 
 	-- Определяем некорректные записи
 	-- Добавляем причину, по которой запись считается некорректной
 	select
