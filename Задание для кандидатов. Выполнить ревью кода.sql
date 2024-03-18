@@ -100,9 +100,11 @@ begin
 	) as s on s.ID_dbo_Customer = cs.ID_dbo_Customer
 		and s.ID_Season = cs.ID_Season
 		and s.DateBegin = cs.DateBegin
+	-- 16. Все дополнительные условия остаются на строке с "when"
 	when matched
 		and t.ID_CustomerSystemType <> s.ID_CustomerSystemType then
 		update
+		-- 17. Обновляемые поля должны идти с новой строки
 		set ID_CustomerSystemType = s.ID_CustomerSystemType
 			,DateEnd = s.DateEnd
 			,ID_dbo_CustomerDistributor = s.ID_dbo_CustomerDistributor
