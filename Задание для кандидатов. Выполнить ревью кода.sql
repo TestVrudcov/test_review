@@ -43,6 +43,7 @@ begin
 		join dbo.Season as s on s.Name = cs.Season
 		join dbo.Customer as c_dist on c_dist.UID_DS = cs.UID_DS_CustomerDistributor
 			and c_dist.ID_mapping_DataSource = 1
+		-- 9. В условии "on" ниже сперва указываем поле присоединяемой таблицы, то есть "cst.Name ="
 		join syn.CustomerSystemType as cst on cs.CustomerSystemType = cst.Name
 	where try_cast(cs.DateBegin as date) is not null
 		and try_cast(cs.DateEnd as date) is not null
