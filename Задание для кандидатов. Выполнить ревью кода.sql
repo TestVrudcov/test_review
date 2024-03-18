@@ -9,6 +9,7 @@ begin
 	declare @ErrorMessage varchar(max)
 
 -- Проверка на корректность загрузки
+	-- 3. Комментарий выше должен быть с отступом как у кода на следующей строке
 	if not exists (
 	select 1
 	from syn.ImportFile as f
