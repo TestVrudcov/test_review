@@ -128,6 +128,7 @@ begin
 			,bir.UID_DS_CustomerDistributor as 'UID Дистрибьютора'
 			,bir.CustomerDistributor as 'Дистрибьютор'
 			,isnull(format(try_cast(bir.DateBegin as date), 'dd.MM.yyyy', 'ru-RU'), bir.DateBegin) as 'Дата начала'
+			-- 19. Синтаксическая ошибка: нет точки между именем таблицы и именем поля
 			,isnull(format(try_cast(birDateEnd as date), 'dd.MM.yyyy', 'ru-RU'), bir.DateEnd) as 'Дата окончания'
 			,bir.FlagActive as 'Активность'
 			,bir.Reason as 'Причина'
