@@ -18,6 +18,7 @@ begin
 	where f.ID = @ID_Record
 		and f.FlagLoaded = cast(1 as bit)
 	)
+		-- 6. Нижний блок "begin/end" должен быть на одном уровне с "if"
 		begin
 			set @ErrorMessage = 'Ошибка при загрузке файла, проверьте корректность данных'
 			raiserror(@ErrorMessage, 3, 1)
