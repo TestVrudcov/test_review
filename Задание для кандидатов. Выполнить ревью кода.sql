@@ -36,6 +36,7 @@ begin
 		,c_dist.ID as ID_dbo_CustomerDistributor
 		,cast(isnull(cs.FlagActive, 0) as bit) as FlagActive
 	into #CustomerSeasonal
+	-- 8. Синтаксическая ошибка: нет "as" в следующем коде
 	from syn.SA_CustomerSeasonal cs
 		join dbo.Customer as c on c.UID_DS = cs.UID_DS_Customer
 			and c.ID_mapping_DataSource = 1
