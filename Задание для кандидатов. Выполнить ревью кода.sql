@@ -82,6 +82,10 @@ begin
 		or try_cast(isnull(cs.FlagActive, 0) as bit) is null
 
 	-- Обработка данных из файла
+	/* 
+		14. Перед названием таблицы, в которую осуществляется "merge", "into" не указывается
+		15. Неверный алиас для таблицы, в которую осуществляется "merge", - он должен быть "t"
+	*/
 	merge into syn.CustomerSeasonal as cs
 	using (
 		select
