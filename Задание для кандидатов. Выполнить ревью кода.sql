@@ -118,6 +118,7 @@ begin
 		select @ErrorMessage = concat('Обработано строк: ', @RowCount)
 		raiserror(@ErrorMessage, 1, 1)
 
+		-- 18. Между -- и самим комментарием должен быть пробел
 		--Формирование таблицы для отчетности
 		select top 100
 			bir.Season as 'Сезон'
